@@ -1,20 +1,21 @@
-name: Increase the resource quota for {{application}} 
+name: Increase the resource quota
 description: Report a bug encountered while operating Kubernetes
 labels: kind/bug
+title: Increase the resource quota for {{application}} {application}
 body:
-  - type: textarea
+  - type: input
     id: application
     attributes:
       label: Application Name
     validations:
       required: true
-  - type: textarea
+  - type: input
     id: namespace
     attributes:
       label: Namespace
     validations:
       required: true
-  - type: textarea
+  - type: input
     id: cluster
     attributes:
       label: Cluster
