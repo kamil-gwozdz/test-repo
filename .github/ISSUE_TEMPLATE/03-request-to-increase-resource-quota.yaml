@@ -1,7 +1,7 @@
 name: Increase the resource quota
 description: Report a bug encountered while operating Kubernetes
 labels: kind/bug
-title: Increase the resource quota for {{application}} {application}
+title: Increase the resource quota for
 body:
   - type: input
     id: application
