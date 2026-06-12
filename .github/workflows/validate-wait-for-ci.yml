@@ -20,7 +20,9 @@ jobs:
     name: preview-deploy
     runs-on: ubuntu-latest
     steps:
-      - run: echo "preview deploy OK"
+      - run: |
+          echo "preview deploy FAILS on purpose"
+          exit 1
 
   nightly-smoke:
     name: nightly-smoke
