@@ -1,0 +1,29 @@
+name: validate-wait-for-ci
+
+on:
+  pull_request:
+
+jobs:
+  build:
+    name: build
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "build OK"
+
+  test:
+    name: test
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "test OK"
+
+  preview-deploy:
+    name: preview-deploy
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "preview deploy OK"
+
+  nightly-smoke:
+    name: nightly-smoke
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "nightly smoke OK"
