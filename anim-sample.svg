@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="230" viewBox="0 0 680 230" font-family="Helvetica, Arial, sans-serif">
+  <rect width="680" height="230" fill="#ffffff"/>
+  <text x="340" y="32" text-anchor="middle" font-size="18" font-weight="700" fill="#2c3042">animated SVG render test</text>
+  <text x="340" y="54" text-anchor="middle" font-size="13" fill="#7a808f">if the amber dot moves and the green dot pulses, animation works here</text>
+
+  <!-- connectors -->
+  <path d="M120,140 H560" fill="none" stroke="#cbd2db" stroke-width="4"/>
+
+  <!-- Client -->
+  <rect x="60" y="114" width="120" height="52" rx="12" fill="#fff" stroke="#dee2e9" stroke-width="2"/>
+  <text x="120" y="145" text-anchor="middle" font-size="15" font-weight="700" fill="#2c3042">Client</text>
+
+  <!-- Router (pulsing amber outline) -->
+  <rect x="280" y="110" width="120" height="60" rx="12" fill="#fff" stroke="#5c54c9" stroke-width="2"/>
+  <text x="340" y="145" text-anchor="middle" font-size="15" font-weight="700" fill="#5c54c9">Router</text>
+  <rect x="280" y="110" width="120" height="60" rx="12" fill="none" stroke="#f3a02d" stroke-width="3" opacity="0">
+    <animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite" keyTimes="0;0.5;1"/>
+  </rect>
+
+  <!-- Subgraph -->
+  <rect x="500" y="114" width="130" height="52" rx="12" fill="#fff" stroke="#9637a5" stroke-width="2"/>
+  <text x="565" y="145" text-anchor="middle" font-size="14" font-weight="700" fill="#9637a5">Subgraph</text>
+
+  <!-- moving request dot: client -> subgraph -> client, looping -->
+  <circle r="9" fill="#f3a02d">
+    <animateMotion dur="3s" repeatCount="indefinite" calcMode="linear"
+      keyTimes="0;0.5;1" keyPoints="0;0.5;1"
+      path="M120,140 L565,140 L120,140"/>
+  </circle>
+
+  <!-- pulsing resolve dot on subgraph -->
+  <circle cx="565" cy="140" r="6" fill="#2aa564">
+    <animate attributeName="r" values="4;11;4" dur="1.2s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="1;0.35;1" dur="1.2s" repeatCount="indefinite"/>
+  </circle>
+</svg>
